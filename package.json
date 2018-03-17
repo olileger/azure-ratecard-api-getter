@@ -1,0 +1,27 @@
+{
+  "name": "azure-ratecard-api-getter",
+  "version": "1.0.0",
+  "description": "A simple library allowing you to send a request to the Azure RateCard API through node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olileger/azure-ratecard-api-getter.git"
+  },
+  "keywords": [
+    "azure",
+    "ratecard",
+    "api"
+  ],
+  "author": "Olivier L.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olileger/azure-ratecard-api-getter/issues"
+  },
+  "homepage": "https://github.com/olileger/azure-ratecard-api-getter#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  }
+}
