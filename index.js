@@ -1,4 +1,4 @@
 /**
  * Exports.
  */
-module.exports = require("./lib/azure-ratecard-api-getter");
+module.exports = require("./lib/azure-ratecard-api-wrapper");

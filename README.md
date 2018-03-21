@@ -10,7 +10,7 @@ A simple library allowing you to send a request to the Azure RateCard API throug
 - You should have added the Azure AD application freshly registered to the IAM of your subscription with sufficient privileges (Reader role is fine)
 
 ## Installation
-`npm install --save azure-ratecard-api-getter`
+`npm install --save azure-ratecard-api-wrapper`
 
 ## Usage
 ```
