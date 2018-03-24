@@ -47,6 +47,11 @@ GetPrices(params, function(result)
 });
 ```
 
+## Using the result
+- `result` object hold the category, subcategory, region and tier for Azure services
+- Syntax is `result.<category>.<subcategory>.<azure region>.<billing unit>.<Unit or Value field>`
+- The list of all fileds is available at <https://raw.githubusercontent.com/olileger/azure-ratecard-api-wrapper/master/lib/references.txt/>
+
 ## Testing
 - Tests are implemented using Mocha & Chai
 - `npm test` will execute the test code under `\test` directory
