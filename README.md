@@ -1,4 +1,4 @@
-# azure-ratecard-api-getter
+# azure-ratecard-api-wrapper
 A simple library allowing you to send a request to the Azure RateCard API through node.js
 
 ## Before Using The Package
