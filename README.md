@@ -13,6 +13,45 @@ A simple library allowing you to send a request to the Azure RateCard API throug
 `npm install --save azure-ratecard-api-wrapper`
 
 ## Usage
+- After doing the prerequisite and installing the package you'll be able to use the only exported method
+- `GetPriceAndMetadataInformation` is exported and expect a parameters object & a callback
 ```
-TBD
+let GetPrices = require("azure-ratecard-api-wrapper").GetPriceAndMetadataInformation;
+
+let params =
+{
+    aad_tenant_id : "AAD_TENANT_ID",
+    application_id : "AAD_REGISTERED_APP_ID",
+    application_secret : "AAD_REGISTERED_APP_SECRET",
+    subscription_id : "AZURE_SUBSCRIPTION_ID",
+    offer_id : "MS-AZR-0003P",
+    currency : "EUR",
+    locale : "en-us",
+    region : "FR"
+}
+
+GetPrices(params, function(result)
+{
+    // Handle the error if any.
+    if (result instanceof Error)
+    {
+        console.log("Error : " + result.message);
+        return;
+    }
+
+    // Work with the result.
+    console.log("VM A0 Windows in US West price is "
+                    + result.VirtualMachines.A0VMWindows.USWest.ComputeHours.Value
+                    + " " + params.currency
+                    + " per " + result.VirtualMachines.A0VMWindows.USWest.ComputeHours.Unit);
+});
 ```
+
+## Testing
+- Tests are implemented using Mocha & Chai
+- `npm test` will execute the test code under `\test` directory
+- `getprice-config.js` file should be customized with your own values especially for :
+  * `aad_tenant_id` matching your Azure AD directory id
+  * `application_id` matching your Application Id as mentionned in the 'Before Using The Package' section
+  * `application_secret` matching your Application Secret as mentionned in the 'Before Using The Package' section
+  * `subscription_id` matching the Azure subscription id under which the application got the 'Reader' role
