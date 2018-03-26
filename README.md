@@ -41,16 +41,17 @@ GetPrices(params, function(result)
 
     // Work with the result.
     console.log("VM A0 Windows in US West price is "
-                    + result.VirtualMachines.A0VMWindows.USWest.ComputeHours.Value
+                    + result.VirtualMachines.A0VMWindows.ComputeHours.USWest.Value
                     + " " + params.currency
-                    + " per " + result.VirtualMachines.A0VMWindows.USWest.ComputeHours.Unit);
+                    + " per " + result.VirtualMachines.A0VMWindows.ComputeHours.USWest.Unit);
 });
 ```
 
 ## Using the result
 - `result` object hold the category, subcategory, region and tier for Azure services
-- Syntax is `result.<category>.<subcategory>.<azure region>.<billing unit>.<Unit or Value field>`
+- Syntax is `result.<category : service or group of services>.<subcategory : tier or service>.<billing unit>.<azure region>.<Unit or Value field>`
 - The list of all fields is available at <https://github.com/olileger/azure-ratecard-api-wrapper/blob/master/lib/references.txt>
+- The `result` doesn't include rates tagged as 'Deprecated'
 
 ## Testing
 - Tests are implemented using Mocha & Chai
