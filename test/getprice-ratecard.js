@@ -131,25 +131,25 @@ describe("GetPriceAndMetadataInformation() - RateCard", function()
         });
     });
 
-    // When locale is void the API is using a default one.
+    // When locale is void the API is returning an error.
     it("locale is void", function(done)
     {
         let o = cfg.CreateConfigurationObject();
         o.locale = "";
         func(o, function(ret)
         {
-            checkRateCardSuccess(ret, done);
+            checkRateCardErr(ret, done);
         });
     });
 
-    // When locale doesn't exist the API is using a default one.
+    // When locale doesn't exist the API is returning an error.
     it("locale doesn't exist", function(done)
     {
         let o = cfg.CreateConfigurationObject();
         o.locale = "XX-ZZ";
         func(o, function(ret)
         {
-            checkRateCardSuccess(ret, done);
+            checkRateCardErr(ret, done);
         });
     });
 
